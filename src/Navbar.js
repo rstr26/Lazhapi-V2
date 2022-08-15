@@ -7,12 +7,13 @@ import api from "./apiKey";
 
 const Navbar = () => {
 
-    const fetch = async () => {
-        await api.products.list()
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
-    }
-    fetch()
+    useEffect(() => {
+        (async => {
+            api.products.list()
+                .then(res => console.log(res))
+                .catch(err => console.log(err))
+        })()
+    }, [])
     return(
         <div className="navbar">
             <nav className="col1">
