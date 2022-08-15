@@ -3,21 +3,16 @@ import { NavLink } from 'react-router-dom'
 import './style/Navbar.css'
 import Search from "./Search";
 import axios from "axios";
+import api from "./apiKey";
 
 const Navbar = () => {
 
-    useEffect(() => {
-        (async () => {
-            await axios
-                .get('https://jsonplaceholder.typicode.com/posts')
-                .then(res => console.log(res.data))
-                .catch(err => console.log(err))
-        })()
-
-        return () => {
-
-        }
-    }, [])
+    const fetch = async () => {
+        await api.products.list()
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+    }
+    fetch()
     return(
         <div className="navbar">
             <nav className="col1">
