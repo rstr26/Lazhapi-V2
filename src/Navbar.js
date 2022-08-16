@@ -2,18 +2,10 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from 'react-router-dom'
 import './style/Navbar.css'
 import Search from "./Search";
-import axios from "axios";
 import api from "./apiKey";
 
 const Navbar = () => {
 
-    useEffect(() => {
-        (async => {
-            api.products.list()
-                .then(res => console.log(res))
-                .catch(err => console.log(err))
-        })()
-    }, [])
     return(
         <div className="navbar">
             <nav className="col1">
