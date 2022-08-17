@@ -3,11 +3,11 @@
     display: flex;
     flex-flow: column;
 }
-.rowFlex{
+.row{
     width: 100%;
 }
 .carousel{
-    /* width: 80%; */
+    /* height: 500px; */
     background-color: aquamarine;
 }
 .newItems{
